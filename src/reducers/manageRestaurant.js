@@ -16,10 +16,18 @@ const manageRestaurants = (state = { restaurants: [], reviews: [] }, action) => 
             }
 
         case "ADD_REVIEW":
-            debugger
-            let newReview = {...action.review, restaurantId: cuid()}
+            // debugger
+            let newReview = {...action.review}
             return { ...state,
                 reviews: [...state.reviews, newReview]
+            }
+
+        case "DELETE_REVIEW":
+            // debugger
+            let reviewIndex = state.reviews.indexOf(action.review)
+            return {
+                ...state,
+                reviews: [...state.reviews.slice(0, reviewIndex), ...state.reviews.slice(reviewIndex + 1)]
             }
 
         default:

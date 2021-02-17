@@ -8,7 +8,7 @@ class Restaurants extends Component {
     // debugger
     return (
       restaurants.map(restaurant => {
-        return <Restaurant restaurant={restaurant} deleteRestaurant={this.props.deleteRestaurant} addReview={this.props.addReview} />
+        return <Restaurant restaurant={restaurant} deleteRestaurant={this.props.deleteRestaurant} addReview={this.props.addReview} deleteReview={this.props.deleteReview} />
       })
     )
   }
